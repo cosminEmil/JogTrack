@@ -4,6 +4,7 @@ ruby "2.7.5"
 
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 gem 'bootstrap-sass'
+gem 'bcrypt'
 gem 'sassc-rails'
 gem "sprockets-rails"
 gem "sqlite3"
