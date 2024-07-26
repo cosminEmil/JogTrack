@@ -5,6 +5,9 @@ ruby "2.7.5"
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 gem 'bootstrap-sass'
 gem 'bcrypt'
+gem 'will_paginate', '3.1.8'
+gem 'bootstrap-will_paginate', '~> 1.0.0'
+gem 'faker'
 gem 'sassc-rails'
 gem "sprockets-rails"
 gem "sqlite3"
