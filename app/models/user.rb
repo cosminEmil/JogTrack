@@ -13,5 +13,20 @@ class User < ApplicationRecord
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
         BCrypt::Password.create(string, cost: cost)
     end
+
+    def admin?
+        admin
+      end
+    
+      def manager?
+        manager
+      end
+    
+      # Optionally, add a method to return the user's role as a string
+      def role
+        return 'Admin' if admin?
+        return 'Manager' if manager?
+        'User'
+      end
   
 end
