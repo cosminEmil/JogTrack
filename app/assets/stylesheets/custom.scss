@@ -145,3 +145,38 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+.logout-button {
+  background: none;
+  border: none;
+  color: #9d9d9d;
+  font: inherit;
+  cursor: pointer;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.logout-button:hover {
+  color: white;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+
+.delete-button:hover {
+  color:steelblue;
+  text-decoration: underline;
+}
+
+.edit-link {
+  margin-left: 10px;
+  color: black;
+}
+
+.edit-link:hover {
+  color:steelblue;
+  text-decoration: underline;
+}

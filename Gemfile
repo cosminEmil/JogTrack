@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby "2.7.5"
 
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
+gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'bcrypt'
 gem 'will_paginate', '3.1.8'
