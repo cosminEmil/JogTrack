@@ -1,0 +1,47 @@
+<li id="activity-<%= activity.id %>" class="activity-card mb-4">
+  <div class="activity-card-body">
+    <div class="d-flex align-items-center mb-3">
+      <%= link_to gravatar_for(activity.user, size: 50), activity.user, class: 'gravatar me-3' %>
+      <div>
+        <span class="user"><%= link_to activity.user.name, activity.user %></span>
+        <span class="activity-meta d-block text-muted">
+          <%= activity.run_at.strftime("%B %d, %Y at %I:%M %p") %>
+        </span>
+      </div>
+    </div>
+    <h5 class="activity-title mb-3"><%= activity.title %></h5>
+    <div class="activity-stats mb-3 d-flex align-items-center">
+      <div class="distance me-3 text-center">
+        <strong><%= activity.distance %> km</strong>
+        <span class="text-muted">Distance</span>
+      </div>
+      <div class="pace me-3 text-center">
+        <strong> 
+          <%= number_with_precision((activity.hours * 60 + activity.minutes + activity.seconds / 60.0) / activity.distance, precision: 2) %>/km
+        </strong>
+        <span class="text-muted">Pace</span>
+      </div>
+      <div class="duration text-center">
+        <strong>
+          <% if activity.hours > 0 %>
+            <%= activity.hours %>h 
+          <% end %>
+          <%= activity.minutes %>m 
+          <%= activity.seconds %>s
+        </strong>
+        <span class="text-muted">Duration</span>
+      </div>
+    </div>
+    <p class="activity-description mb-3"><%= activity.description %></p>
+    <p class="activity-timestamp text-muted">
+      Posted <%= time_ago_in_words(activity.created_at) %> ago.
+    </p>
+    <% if current_user?(activity.user) || current_user.admin? %>
+      <div class="d-flex">
+        <%= button_to "Delete", activity, method: :delete,
+                                          data: { confirm: "Are you sure?" }, class: "btn btn-danger me-2" %>
+        <%= link_to "Edit", edit_activity_path(activity), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</li>

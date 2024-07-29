@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'flatpickr/dist/flatpickr.min.css';
 
 /* universal */
 
@@ -160,23 +161,307 @@ input {
   color: white;
 }
 
-.delete-button {
-  background: none;
+/* activities */
+.activities {
+  list-style: none;
+  padding: 0;
+}
+
+.activities li {
+  padding: 20px 0;
+  border-top: 1px solid #e8e8e8;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.activity-header img.gravatar {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.activity-details {
+  margin-left: 60px;
+}
+
+.activity-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.activity-meta {
+  color: #999;
+  font-size: 0.9em;
+}
+
+/* Ensure the activity-stats class uses flexbox for layout */
+.activity-stats {
+  display: flex;
+  justify-content: space-between; /* Adjust spacing between items */
+  align-items: center; /* Center items vertically */
+  margin-top: 10px;
+}
+
+.activity-stats > div {
+  text-align: center;
+  margin-right: 20px; /* Space between items */
+}
+
+.activity-stats > div:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+
+.activity-stats div strong {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.activity-stats div span {
+  color: #999;
+}
+
+/* Additional styles if necessary */
+.activity-card-body {
+  padding: 25px; /* Increased padding inside the card body */
+}
+
+
+.activity-footer {
+  margin-top: 10px;
+}
+
+.user {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.distance, .duration, .title, .description, .timestamp {
+  display: block;
+  margin: 5px 0;
+}
+
+.timestamp {
+  color: #999;
+}
+
+/* activity form */
+
+.activity-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.activity-form .form-group {
+  margin-bottom: 15px;
+}
+
+.activity-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.activity-form .form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.activity-form .duration-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.activity-form .btn-primary {
+  padding: 10px 20px;
+  background-color: #007bff;
   border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.activity-form .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+#error_explanation {
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+  margin: 0 0 10px;
+  color: #a94442;
+}
+
+#error_explanation ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#distance-input {
+  width: 100px;
+}
+
+.duration-fields {
+  width: 200px;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+  gap: 10px;
+}
+
+.activity-card {
+  max-width: 550px; /* Increased width for larger cards */
+  margin: 30px auto; /* Increased margin for more space between cards */
+  padding: 10px; /* Increased padding for more space inside the card */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 12px; /* Slightly larger border radius for more rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+}
+
+.activity-card-body {
+  padding: 25px; /* Increased padding inside the card body */
+}
+
+.activity-card .d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.activity-card .activity-title {
+  font-size: 1.75rem; /* Increased font size for the title */
+  font-weight: bold;
+}
+
+.activity-card .activity-stats {
+  display: flex;
+  gap: 25px; /* Increased gap between stats */
+  font-size: 1.5rem; /* Increased font size for stats */
+}
+
+.activity-card .distance,
+.activity-card .duration {
+  font-size: 1.5rem; /* Increased font size for distance and duration */
+}
+
+.activity-card .activity-description {
+  font-size: 1.8rem; /* Increased font size for description */
+}
+
+.activity-card .activity-timestamp {
+  font-size: 1.3rem; /* Increased font size for timestamp */
+}
+
+.activity-card .btn {
+  padding: 10px 20px; 
+  border-radius: 6px; 
+  font-size: 1.1rem; 
+}
+
+.activity-card .btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+}
+
+.activity-card .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.activity-card .btn-danger {
+  background-color: #dc3545;
+  border: none;
+  color: #fff;
+}
+
+.activity-card .btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Universal Styling */
+.user-info {
+  text-align: center; /* Center-align all content */
+  font-family: 'Arial', sans-serif; /* Clean font for better readability */
+  color: #333; /* Dark text for contrast */
+  padding: 20px; /* Add padding for spacing */
+  background-color: #ffffff; /* White background for a clean look */
+  border-radius: 12px; /* Rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+.user-avatar {
+  border-radius: 50%; /* Make the avatar circular */
+  margin-bottom: 15px; /* Space below the avatar */
+  border: 3px solid #007bff; /* Blue border for a striking look */
+}
+
+.user-name {
+  font-size: 2.2em; /* Larger font size for prominence */
+  margin-top: 10px; /* Space above the name */
+  margin-bottom: 10px; /* Space below the name */
+  color: #007bff; /* Vibrant blue for the name */
+}
+
+.user-role {
+  font-size: 1.6em; /* Font size for role */
+  color: #6c757d; /* Muted gray for role */
+}
+
+.user-details {
+  display: flex;
+  justify-content: center; /* Center-align the details horizontally */
+  gap: 20px; /* Increased space between items */
+  margin-top: 15px; /* Space above the details */
+}
+
+.activity-count {
+  font-size: 1.5em; /* Font size for both items */
+  color: #007bff; /* Blue color for links and counts */
+}
+
+.profile-link {
   text-decoration: none;
+  font-weight: 500;
+  color: #007bff; /* Base color */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Ensure proper transition syntax */
 }
 
-.delete-button:hover {
-  color:steelblue;
-  text-decoration: underline;
+.profile-link:hover {
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+.activity-count {
+  font-weight: 400; /* Regular weight for activity count */
+  color: black; /* Teal color for activity count */
+
 }
 
-.edit-link {
-  margin-left: 10px;
-  color: black;
+.chart-container {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.edit-link:hover {
-  color:steelblue;
-  text-decoration: underline;
+.chart-container img {
+  max-width: 100%;
+  height: auto;
 }

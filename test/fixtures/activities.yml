@@ -1,0 +1,67 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  distance: 1
+  hours: 1
+  minutes: 1
+  seconds: 1
+  title: Morning Run
+  description: A refreshing morning run.
+  run_at: 2024-07-28 06:30:00
+  user: michael
+  created_at: <%= 5.days.ago %>
+
+two:
+  distance: 5
+  hours: 0
+  minutes: 45
+  seconds: 30
+  title: Evening Jog
+  description: A nice jog in the evening.
+  run_at: 2024-07-27 19:15:00
+  user: archer
+  created_at: <%= 4.days.ago %>
+
+three:
+  distance: 10
+  hours: 1
+  minutes: 30
+  seconds: 0
+  title: Long Run
+  description: A long run to build endurance.
+  run_at: 2024-07-26 07:00:00
+  user: lana
+  created_at: <%= 3.days.ago %>
+
+four:
+  distance: 2
+  hours: 0
+  minutes: 25
+  seconds: 15
+  title: Quick Run
+  description: A quick run around the park.
+  run_at: 2024-07-25 18:00:00
+  user: malory
+  created_at: <%= 2.days.ago %>
+
+five:
+  distance: 3
+  hours: 0
+  minutes: 35
+  seconds: 50
+  title: Afternoon Run
+  description: Running to stay fit.
+  run_at: 2024-07-24 15:30:00
+  user: michael
+  created_at: <%= 1.day.ago %>
+
+most_recent:
+  distance: 4
+  hours: 0
+  minutes: 40
+  seconds: 10
+  title: Most Recent Run
+  description: The most recent run for testing.
+  run_at: 2024-07-29 12:00:00
+  user: michael
+  created_at: <%= Time.zone.now %>

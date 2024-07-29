@@ -4,7 +4,10 @@ ruby "2.7.5"
 
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 gem 'jquery-rails'
+gem 'flatpickr'
+gem 'mini_magick'
 gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails'
 gem 'bcrypt'
 gem 'will_paginate', '3.1.8'
 gem 'bootstrap-will_paginate', '~> 1.0.0'
