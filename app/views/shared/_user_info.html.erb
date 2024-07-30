@@ -1,9 +1,11 @@
 <div class="user-info">
-  <%= gravatar_for(current_user, size: 100, class: 'user-avatar') %>
-  <h1 class="user-name"><%= current_user.name %></h1>
-  <p class="user-role">Role: <%= current_user.role %></p>
+  <%= gravatar_for(user, size: 100, class: 'user-avatar') %>
+  <h1 class="user-name"><%= user.name %></h1>
+  <p class="user-role">Role: <%= user.role %></p>
   <div class="user-details">
-    <span class="profile-link"><%= link_to "View My Profile", current_user, class: "btn btn-link" %></span>
-    <span class="activity-count"><%= pluralize(current_user.activities.count, "activity") %></span>
+    <% if current_user?(user) %>
+      <span class="profile-link"><%= link_to "View My Profile", current_user, class: "btn btn-link" %></span>
+    <% end %>
+    <span class="activity-count"><%= pluralize(user.activities.count, "activity") %></span>
   </div>
 </div>

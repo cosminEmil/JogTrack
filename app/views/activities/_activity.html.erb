@@ -12,7 +12,14 @@
     <h5 class="activity-title mb-3"><%= activity.title %></h5>
     <div class="activity-stats mb-3 d-flex align-items-center">
       <div class="distance me-3 text-center">
-        <strong><%= activity.distance %> km</strong>
+          <% distance = activity.distance %>
+          <% formatted_distance = number_with_precision(distance, precision: 2) %>
+          
+          <% if distance.present? && distance != 0 && distance != distance.to_i %>
+            <strong><%= formatted_distance %> km</strong>
+          <% else %>
+            <strong><%= distance.to_i %> km</strong>
+          <% end %>
         <span class="text-muted">Distance</span>
       </div>
       <div class="pace me-3 text-center">

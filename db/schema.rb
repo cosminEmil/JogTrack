@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_28_111043) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_29_171348) do
   create_table "activities", force: :cascade do |t|
-    t.integer "distance"
+    t.float "distance"
     t.integer "hours"
     t.integer "minutes"
     t.integer "seconds"
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_28_111043) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "pace", precision: 10, scale: 2
     t.index ["user_id", "created_at"], name: "index_activities_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_activities_on_user_id"
   end

@@ -251,6 +251,22 @@ input {
 
 /* activity form */
 
+.activity-form .col-md-6:last-child {
+  padding-left: 0;
+  margin-left: -25px; 
+}
+
+.activity-form .duration-fields {
+  display: flex;
+  gap: 5px; 
+  margin-right: 0;
+}
+
+
+.activity-form .duration-fields .form-control {
+  width: 60px; 
+}
+
 .activity-form {
   max-width: 400px;
   margin: 0 auto;

@@ -2,9 +2,6 @@ class ActivitiesController < ApplicationController
     before_action :logged_in_user, only: [:create, :edit, :update, :destroy]
     before_action :correct_user, only: :destroy
     
-    def show
-        
-    end
     
     def create
         @activity = current_user.activities.build(activity_params)
@@ -27,7 +24,7 @@ class ActivitiesController < ApplicationController
             flash[:success] = "Activity updated"
             redirect_to root_path
         else
-            render 'edit_activity'
+            render 'edit'
         end
     end
 
@@ -46,6 +43,4 @@ class ActivitiesController < ApplicationController
             @activity = Activity.find_by(id: params[:id])
             redirect_to root_url if @activity.nil? && !current_user.admin?
         end
-        
-    
 end

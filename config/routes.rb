@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   get 'add_activity', to: 'static_pages#add_activity', as: 'add_activity'
   resources :users
   resources :activities
+  resources :activities do
+    collection do
+      get :weekly_distances
+    end
+  end
 end

@@ -4,6 +4,8 @@ ruby "2.7.5"
 
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 gem 'jquery-rails'
+gem "chartkick"
+gem "groupdate"
 gem 'flatpickr'
 gem 'mini_magick'
 gem 'bootstrap-sass'
