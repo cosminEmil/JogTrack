@@ -15,9 +15,13 @@ class UsersController < ApplicationController
     @grouped_activities = @activities.group_by { |activity| week_range(activity.run_at) }
     @week_averages = @grouped_activities.transform_values do |activities|
       total_distance = activities.sum(&:distance)
-      average_distance = activities.empty? ? 0 : total_distance / activities.size.to_f
+      total_time = activities.sum(&:hours) * 60 + activities.sum(&:minutes) + activities.sum(&:seconds) / 60.0
+      average_distance = total_distance / activities.size.to_f
+      average_time = total_time / activities.size.to_f
+      average_pace = average_time / average_distance
       {
-        average_distance: average_distance
+        average_distance: average_distance,
+        average_pace: average_pace
       }
     end
   end

@@ -29,7 +29,7 @@
   <div class="form-group">
     <%= f.label :run_at, "Date & Time" %>
     <% current_time = Time.now.strftime("%d/%m/%Y %I:%M %p") %>
-    <%= f.text_field :run_at, placeholder: current_time, class: 'form-control datetimepicker' %>
+    <%= f.datetime_field :run_at, placeholder: current_time, class: 'form-control datetimepicker' %>
   </div>
 
   <div class="form-group">

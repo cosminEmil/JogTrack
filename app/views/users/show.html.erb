@@ -1,8 +1,6 @@
 <div class="container">
   <div class="row">
-
     <!-- Left column for activity distances -->
-
     <div class="col-md-8">
       <section class="activity-summary">
         <h3>Activity Distances by Week</h3>
@@ -11,20 +9,20 @@
           <% end_date = week_range[:end] %>
           <% averages = @week_averages[week_range] || {} %>
           <% average_distance = averages[:average_distance] || 0 %>
-
+          <% average_pace = averages[:average_pace] || 0 %>
           <div class="week-card mb-4">
             <div class="week-info">
               <h4>Week: <%= start_date.strftime("%B %d, %Y") %> - <%= end_date.strftime("%B %d, %Y") %></h4>
               <p class="average-distance">Average Distance: <strong><%= average_distance.round(2) %> km</strong></p>
+              <p class="average-pace">Average Pace: <strong><%= average_pace.round(2) %>/km</strong></p>
             </div>
-            
+          
           </div>
         <% end %>
       </section>
     </div>
 
     <!-- Right column for activity cards -->
-    
     <div class="col-md-4">
       <section class="activity-feed">
         <%= render 'shared/feed' %>
