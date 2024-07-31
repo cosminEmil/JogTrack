@@ -518,3 +518,58 @@ input {
   margin-top: 30px; /* Adjust as needed */
   width: 90px;
 }
+
+.custom-card {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+}
+
+.custom-card .form-label {
+  font-weight: 600;
+}
+
+.custom-card .form-control {
+  border-radius: 0.375rem;
+}
+
+.custom-card .btn-primary {
+  border-radius: 0.375rem;
+}
+
+.login-card-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.btn-primary {
+  border-radius: 0.375rem;
+}
+
+.signup-link {
+  margin-top: 1rem;
+  text-align: center;
+}

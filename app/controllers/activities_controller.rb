@@ -2,14 +2,17 @@ class ActivitiesController < ApplicationController
     before_action :logged_in_user, only: [:create, :edit, :update, :destroy]
     before_action :correct_user, only: :destroy
     
+    def new
+        @activity = Activity.new
+    end
+
     def create
         @activity = current_user.activities.build(activity_params)
         if @activity.save
             flash[:success] = "Activity created"
             redirect_to root_url
         else
-            @feed_items = current_user.feed.paginate(page: params[:page])
-            render 'static_pages/home'
+            render 'new'
         end
     end
 
