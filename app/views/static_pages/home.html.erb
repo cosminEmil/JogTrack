@@ -1,31 +1,47 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
-      
       <section class="user_info">
         <%= render 'shared/user_info', user: @user %>
       </section>
-
     </aside>
 
     <div class="col-md-8">
       <h3>Activity Feed</h3>
-      <%= render 'shared/feed' %>
+      <%= form_with url: root_path, method: :get, local: true do %>
+        <div class="row">
+          <div class="input-group col-md-6 mb-3">
+            <%= label_tag :start_date, "Start Date" %>
+            <%= date_field_tag :start_date, params[:start_date], class: "form-control" %>
+          </div>
+          <div class="input-group col-md-6 mb-3">
+            <%= label_tag :end_date, "End Date" %>
+            <%= date_field_tag :end_date, params[:end_date], class: "form-control" %>
+          </div>
+          
+          <div class="input-group col-md-6 mb-3">
+            <%= submit_tag "Filter", class: "btn btn-primary filter-button", id: "filter_btn" %>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @feed_items.present? %>
+        <div class="col-md-10">
+          <%= render 'shared/feed' %>
+        </div>
+      <% else %>
+        <p>No feed items found for the selected date range.</p>
+      <% end %>
     </div>
-
   </div>
-
 <% else %>
-  
   <div class="center jumbotron">
     <h1>Welcome to JogTrack</h1>
     <h2>
       <b>Track. Improve. Succeed.</b> <br><br>
       <em>Your Run. Our Mission.</em> <br><br>
-      <b><em>READY? <b><em>
+      <b><em>READY?</em></b>
     </h2>
     <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
   </div>
-
- <% end %>
-
+<% end %>
