@@ -8,7 +8,6 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_importmap_tags %>
-    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -19,13 +18,17 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><%= link_to "Home", root_path %></li>
                     <% if logged_in? %>
+
                         <li><%= link_to "Add Activity", add_activity_path %></li>
                         <li><%= link_to "Users", users_path %></li>
                         <li><%= link_to "Profile", current_user %></li>
                         <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                         <li><%= button_to "Log out", logout_path, method: :delete, class: "logout-button" %></li>
+
                     <% else %>
+
                         <li><%= link_to "Log in", login_path %></li>
+                        
                     <% end %>
 
                 </ul>

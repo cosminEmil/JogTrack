@@ -5,7 +5,7 @@
       <div>
         <span class="user"><%= link_to activity.user.name, activity.user %></span>
         <span class="activity-meta d-block text-muted">
-          <%= activity.run_at.strftime("%B %d, %Y at %I:%M %p") %>
+          <br> <%= activity.run_at.strftime("%B %d, %Y at %I:%M %p") %> </br>
         </span>
       </div>
     </div>
@@ -45,9 +45,9 @@
     </p>
     <% if current_user?(activity.user) || current_user.admin? %>
       <div class="d-flex">
+        <%= link_to "Edit", edit_activity_path(activity), class: "btn btn-primary" %>
         <%= button_to "Delete", activity, method: :delete,
                                           data: { confirm: "Are you sure?" }, class: "btn btn-danger me-2" %>
-        <%= link_to "Edit", edit_activity_path(activity), class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>

@@ -2,7 +2,6 @@ class ActivitiesController < ApplicationController
     before_action :logged_in_user, only: [:create, :edit, :update, :destroy]
     before_action :correct_user, only: :destroy
     
-    
     def create
         @activity = current_user.activities.build(activity_params)
         if @activity.save

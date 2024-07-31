@@ -1,25 +1,34 @@
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <%= render 'shared/user_info', user: @user %>
-    </section>
-  </aside>
+<div class="container">
+  <div class="row">
 
-  <div class="col-md-8">
-    <h3>Activity Distances by Week</h3>
-    <% @grouped_activities.each do |week_range, activities| %>
-      <% start_date = week_range[:start] %>
-      <% end_date = week_range[:end] %>
-      <% averages = @week_averages[week_range] || {} %>
-      <% average_distance = averages[:average_distance] || 0 %>
-      
-      <h4>Week: <%= start_date.strftime("%B %d, %Y") %> - <%= end_date.strftime("%B %d, %Y") %></h4>
-      <p>Average Distance: <%= average_distance.round(2) %> km</p>
-      <ul>
-        <% activities.each do |activity| %>
-          <li><%= activity.distance %> km</li>
+    <!-- Left column for activity distances -->
+
+    <div class="col-md-8">
+      <section class="activity-summary">
+        <h3>Activity Distances by Week</h3>
+        <% @grouped_activities.each do |week_range, activities| %>
+          <% start_date = week_range[:start] %>
+          <% end_date = week_range[:end] %>
+          <% averages = @week_averages[week_range] || {} %>
+          <% average_distance = averages[:average_distance] || 0 %>
+
+          <div class="week-card mb-4">
+            <div class="week-info">
+              <h4>Week: <%= start_date.strftime("%B %d, %Y") %> - <%= end_date.strftime("%B %d, %Y") %></h4>
+              <p class="average-distance">Average Distance: <strong><%= average_distance.round(2) %> km</strong></p>
+            </div>
+            
+          </div>
         <% end %>
-      </ul>
-    <% end %>
+      </section>
+    </div>
+
+    <!-- Right column for activity cards -->
+    
+    <div class="col-md-4">
+      <section class="activity-feed">
+        <%= render 'shared/feed' %>
+      </section>
+    </div>
   </div>
 </div>

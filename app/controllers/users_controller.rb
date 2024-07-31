@@ -11,11 +11,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @activities = @user.activities.paginate(page: params[:page])
-    
-    # Group activities by the week they were run
+    @feed_items = @user.feed.paginate(page: params[:page])
     @grouped_activities = @activities.group_by { |activity| week_range(activity.run_at) }
-    
-    # Calculate weekly averages
     @week_averages = @grouped_activities.transform_values do |activities|
       total_distance = activities.sum(&:distance)
       average_distance = activities.empty? ? 0 : total_distance / activities.size.to_f

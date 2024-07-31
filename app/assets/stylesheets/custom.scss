@@ -1,483 +1,506 @@
+
+/* Bootstrap and Flatpickr */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'flatpickr/dist/flatpickr.min.css';
 
-/* universal */
-
+/* Universal Styles */
 body {
-    padding-top: 60px;
+    padding-top: 60px; /* Space for fixed header */
 }
 
 section {
-    overflow: auto;
+    overflow: auto; /* Handle overflow in sections */
 }
 
 textarea {
-    resize: vertical;
+    resize: vertical; /* Allow vertical resizing only */
 }
 
 .center {
-    text-align: center;
+    text-align: center; /* Center align text */
 }
 
 .center h1 {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Space below h1 in centered sections */
 }
 
-/* typography */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1;
+    line-height: 1; /* Remove extra line height */
 }
 
 h1 {
-    font-size: 3em;
-    letter-spacing: -2px;
-    margin-bottom: 30px;
-    text-align: center;
+    font-size: 3em; /* Large font size */
+    letter-spacing: -2px; /* Adjust letter spacing */
+    margin-bottom: 30px; /* Space below h1 */
+    text-align: center; /* Center align h1 */
 }
 
 h2 {
-    font-size: 2em;
-    letter-spacing: -1px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: normal;
-    color: #777;
+    font-size: 2em; /* Font size for h2 */
+    letter-spacing: -1px; /* Adjust letter spacing */
+    margin-bottom: 30px; /* Space below h2 */
+    text-align: center; /* Center align h2 */
+    font-weight: normal; /* Normal weight for h2 */
+    color: #777; /* Gray color for h2 */
 }
 
 p {
-    font-size: 1.1em;
-    line-height: 1.7em;
+    font-size: 1.1em; /* Slightly larger font size for paragraphs */
+    line-height: 1.7em; /* Line height for readability */
 }
 
-/* header */
-
+/* Header Styles */
 #logo {
-    float: left;
-    margin-right: 10px;
-    font-size: 1.7em;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    padding-top: 9px;
-    font-weight: bold;
+    float: left; /* Float logo to the left */
+    margin-right: 10px; /* Space to the right of the logo */
+    font-size: 1.7em; /* Font size for logo */
+    color: #fff; /* White color for logo text */
+    text-transform: uppercase; /* Uppercase logo text */
+    letter-spacing: -1px; /* Adjust letter spacing */
+    padding-top: 9px; /* Padding on top of logo */
+    font-weight: bold; /* Bold font for logo */
 }
 
 #logo:hover {
-    color: #fff;
-    text-decoration: none;
+    color: #fff; /* Maintain white color on hover */
+    text-decoration: none; /* Remove underline on hover */
 }
 
-/* sidebar */
-
+/* Sidebar Styles */
 aside {
     section.user_info {
-      margin-top: 20px;
+      margin-top: 20px; /* Margin for user_info section */
     }
     section {
-      padding: 10px 0;
-      margin-top: 20px;
+      padding: 10px 0; /* Padding for sections within aside */
+      margin-top: 20px; /* Margin for sections within aside */
       &:first-child {
-        border: 0;
-        padding-top: 0;
+        border: 0; /* Remove border for first section */
+        padding-top: 0; /* Remove top padding for first section */
       }
       span {
-        display: block;
-        margin-bottom: 3px;
-        line-height: 1;
+        display: block; /* Block display for span elements */
+        margin-bottom: 3px; /* Space below span elements */
+        line-height: 1; /* Line height for span elements */
       }
       h1 {
-        font-size: 1.4em;
-        text-align: left;
-        letter-spacing: -1px;
-        margin-bottom: 3px;
-        margin-top: 0px;
+        font-size: 1.4em; /* Font size for h1 in sidebar */
+        text-align: left; /* Left align h1 in sidebar */
+        letter-spacing: -1px; /* Adjust letter spacing */
+        margin-bottom: 3px; /* Space below h1 in sidebar */
+        margin-top: 0px; /* Remove top margin for h1 */
       }
     }
-  }
+}
 
 .gravatar {
-  float: left;
-  margin-right: 10px;
+  float: left; /* Float gravatar image to the left */
+  margin-right: 10px; /* Space to the right of gravatar */
 }
 
 .gravatar_edit {
-  margin-top: 15px;
+  margin-top: 15px; /* Margin on top of gravatar_edit */
 }
-  
-/* forms */
 
+/* Form Styles */
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing(border-box);
+  border: 1px solid #bbb; /* Border color for form elements */
+  width: 100%; /* Full width for form elements */
+  margin-bottom: 15px; /* Space below form elements */
+  @include box_sizing(border-box); /* Include box sizing for consistent sizing */
 }
 
 input {
-  height: auto !important;
+  height: auto !important; /* Ensure auto height for inputs */
 }
 
 #error_explanation {
-  color: red;
+  color: red; /* Text color for error explanation */
   
   ul {
-    color: red;
-    margin: 0 0 30px 0;
+    color: red; /* Text color for error list */
+    margin: 0 0 30px 0; /* Margin below error list */
   }
 }
 
 .field_with_errors {
-  @extend .has-error;
+  @extend .has-error; /* Extend error styling */
   
   .form-control {
-    color: $state-danger-text;
+    color: $state-danger-text; /* Text color for form control in error state */
   }
 }
 
-/* Users index */
+/* Users Index */
 .users {
-  list-style: none;
-  margin: 0;
+  list-style: none; /* Remove default list styling */
+  margin: 0; /* Remove margin */
+}
 
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
+.users li {
+  overflow: auto; /* Handle overflow in list items */
+  padding: 10px 0; /* Padding inside list items */
+  border-bottom: 1px solid $gray-lighter; /* Border below list items */
 }
 
 .logout-button {
-  background: none;
-  border: none;
-  color: #9d9d9d;
-  font: inherit;
-  cursor: pointer;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  color: #9d9d9d; /* Gray color for button */
+  font: inherit; /* Inherit font properties */
+  cursor: pointer; /* Pointer cursor for button */
+  padding-top: 15px; /* Padding on top of button */
+  padding-bottom: 15px; /* Padding on bottom of button */
 }
 
 .logout-button:hover {
-  color: white;
+  color: white; /* White color on hover */
 }
 
-/* activities */
+/* Activities */
 .activities {
-  list-style: none;
-  padding: 0;
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
 }
 
 .activities li {
-  padding: 20px 0;
-  border-top: 1px solid #e8e8e8;
+  padding: 20px 0; /* Padding inside activity list items */
+  border-top: 1px solid #e8e8e8; /* Border on top of list items */
 }
 
 .activity-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+  display: flex; /* Flexbox layout for header */
+  align-items: center; /* Align items vertically in center */
+  margin-bottom: 10px; /* Space below activity header */
 }
 
 .activity-header img.gravatar {
-  border-radius: 50%;
-  margin-right: 10px;
+  border-radius: 50%; /* Circular gravatar image */
+  margin-right: 10px; /* Space to the right of gravatar image */
 }
 
 .activity-details {
-  margin-left: 60px;
+  margin-left: 60px; /* Space to the left of activity details */
 }
 
 .activity-title {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 5px;
+  font-weight: bold; /* Bold font for activity title */
+  font-size: 1.2em; /* Font size for activity title */
+  margin-bottom: 5px; /* Space below activity title */
 }
 
 .activity-meta {
-  color: #999;
-  font-size: 0.9em;
+  color: #999; /* Gray color for meta information */
+  font-size: 0.9em; /* Font size for meta information */
 }
 
-/* Ensure the activity-stats class uses flexbox for layout */
+/* Activity Stats */
 .activity-stats {
-  display: flex;
-  justify-content: space-between; /* Adjust spacing between items */
+  display: flex; /* Flexbox layout for stats */
+  justify-content: space-between; /* Space between items */
   align-items: center; /* Center items vertically */
-  margin-top: 10px;
+  margin-top: 10px; /* Space above activity stats */
 }
 
 .activity-stats > div {
-  text-align: center;
-  margin-right: 20px; /* Space between items */
+  text-align: center; /* Center align text in stats items */
+  margin-right: 20px; /* Space between stats items */
 }
 
 .activity-stats > div:last-child {
-  margin-right: 0; /* Remove margin from the last item */
+  margin-right: 0; /* Remove margin from last stats item */
 }
 
 .activity-stats div strong {
-  display: block;
-  font-size: 1.2em;
-  margin-bottom: 5px;
+  display: block; /* Block display for strong elements */
+  font-size: 1.2em; /* Font size for strong elements */
+  margin-bottom: 5px; /* Space below strong elements */
 }
 
 .activity-stats div span {
-  color: #999;
+  color: #999; /* Gray color for span elements */
 }
 
-/* Additional styles if necessary */
-.activity-card-body {
-  padding: 25px; /* Increased padding inside the card body */
-}
-
-
-.activity-footer {
-  margin-top: 10px;
-}
-
-.user {
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.distance, .duration, .title, .description, .timestamp {
-  display: block;
-  margin: 5px 0;
-}
-
-.timestamp {
-  color: #999;
-}
-
-/* activity form */
-
+/* Activity Form */
 .activity-form .col-md-6:last-child {
-  padding-left: 0;
-  margin-left: -25px; 
+  padding-left: 0; /* Remove left padding for last column */
+  margin-left: -25px; /* Negative margin for alignment */
 }
 
 .activity-form .duration-fields {
-  display: flex;
-  gap: 5px; 
-  margin-right: 0;
+  display: flex; /* Flexbox layout for duration fields */
+  gap: 5px; /* Space between duration fields */
+  margin-right: 0; /* Remove margin on right */
 }
 
-
 .activity-form .duration-fields .form-control {
-  width: 60px; 
+  width: 60px; /* Fixed width for duration fields */
 }
 
 .activity-form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  margin-top: 50px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Maximum width for form */
+  margin: 0 auto; /* Center align form */
+  padding: 20px; /* Padding inside form */
+  margin-top: 50px; /* Space above form */
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 10px; /* Rounded corners for form */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for form */
 }
 
 .activity-form .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Space below form groups */
 }
 
 .activity-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  display: block; /* Block display for labels */
+  margin-bottom: 5px; /* Space below labels */
+  font-weight: bold; /* Bold font for labels */
 }
 
 .activity-form .form-control {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: 100%; /* Full width for form controls */
+  padding: 10px; /* Padding inside form controls */
+  border: 1px solid #ccc; /* Border color for form controls */
+  border-radius: 5px; /* Rounded corners for form controls */
 }
 
 .activity-form .duration-fields {
-  display: flex;
-  gap: 10px;
+  display: flex; /* Flexbox layout for duration fields */
+  gap: 10px; /* Space between duration fields */
 }
 
 .activity-form .btn-primary {
-  padding: 10px 20px;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
+  padding: 10px 20px; /* Padding for primary button */
+  background-color: #007bff; /* Blue background for primary button */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners for button */
+  color: #fff; /* White text color */
+  cursor: pointer; /* Pointer cursor for button */
 }
 
 .activity-form .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 #error_explanation {
-  background-color: #f2dede;
-  border: 1px solid #ebccd1;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  background-color: #f2dede; /* Light red background for error */
+  border: 1px solid #ebccd1; /* Border color for error */
+  padding: 10px; /* Padding inside error explanation */
+  border-radius: 5px; /* Rounded corners for error explanation */
+  margin-bottom: 20px; /* Space below error explanation */
 }
 
 #error_explanation h2 {
-  margin: 0 0 10px;
-  color: #a94442;
+  margin: 0 0 10px; /* Space below h2 */
+  color: #a94442; /* Darker red color for h2 */
 }
 
 #error_explanation ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+  margin: 0; /* Remove margin from list */
+  padding: 0; /* Remove padding from list */
+  list-style-type: none; /* Remove list styling */
 }
 
 #distance-input {
-  width: 100px;
+  width: 100px; /* Fixed width for distance input */
 }
 
 .duration-fields {
-  width: 200px;
+  width: 200px; /* Fixed width for duration fields container */
 }
 
 .d-flex {
-  display: flex;
-  align-items: center; /* Aligns items vertically in the center */
-  gap: 10px;
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Space between items */
 }
 
 .activity-card {
-  max-width: 550px; /* Increased width for larger cards */
-  margin: 30px auto; /* Increased margin for more space between cards */
-  padding: 10px; /* Increased padding for more space inside the card */
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 12px; /* Slightly larger border radius for more rounded corners */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+  max-width: 550px; /* Maximum width for activity cards */
+  margin: 30px auto; /* Center align cards with margin */
+  padding: 10px; /* Padding inside card */
+  background-color: #f9f9f9; /* Light background color */
+  border: 1px solid #ddd; /* Light border for card */
+  border-radius: 12px; /* Rounded corners for card */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for card */
 }
 
 .activity-card-body {
-  padding: 25px; /* Increased padding inside the card body */
+  padding: 25px; /* Padding inside card body */
 }
 
 .activity-card .d-flex {
-  display: flex;
-  align-items: center;
+  display: flex; /* Flexbox layout for card content */
+  align-items: center; /* Center items vertically */
 }
 
 .activity-card .activity-title {
-  font-size: 1.75rem; /* Increased font size for the title */
-  font-weight: bold;
+  font-size: 1.75rem; /* Larger font size for title */
+  font-weight: bold; /* Bold font for title */
 }
 
 .activity-card .activity-stats {
-  display: flex;
-  gap: 25px; /* Increased gap between stats */
-  font-size: 1.5rem; /* Increased font size for stats */
+  display: flex; /* Flexbox layout for stats */
+  gap: 25px; /* Space between stats */
+  font-size: 1.5rem; /* Font size for stats */
 }
 
 .activity-card .distance,
 .activity-card .duration {
-  font-size: 1.5rem; /* Increased font size for distance and duration */
+  font-size: 1.5rem; /* Font size for distance and duration */
 }
 
 .activity-card .activity-description {
-  font-size: 1.8rem; /* Increased font size for description */
+  font-size: 1.8rem; /* Font size for description */
 }
 
 .activity-card .activity-timestamp {
-  font-size: 1.3rem; /* Increased font size for timestamp */
+  font-size: 1.3rem; /* Font size for timestamp */
 }
 
 .activity-card .btn {
-  padding: 10px 20px; 
-  border-radius: 6px; 
-  font-size: 1.1rem; 
+  padding: 10px 20px; /* Padding for buttons */
+  border-radius: 6px; /* Rounded corners for buttons */
+  font-size: 1.1rem; /* Font size for buttons */
 }
 
 .activity-card .btn-primary {
-  background-color: #007bff;
-  border: none;
-  color: #fff;
+  background-color: #007bff; /* Blue background for primary button */
+  border: none; /* Remove border */
+  color: #fff; /* White text color */
 }
 
 .activity-card .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 .activity-card .btn-danger {
-  background-color: #dc3545;
-  border: none;
-  color: #fff;
+  background-color: #dc3545; /* Red background for danger button */
+  border: none; /* Remove border */
+  color: #fff; /* White text color */
 }
 
 .activity-card .btn-danger:hover {
-  background-color: #c82333;
+  background-color: #c82333; /* Darker red on hover */
 }
 
-/* Universal Styling */
+/* User Info */
 .user-info {
-  text-align: center; /* Center-align all content */
-  font-family: 'Arial', sans-serif; /* Clean font for better readability */
-  color: #333; /* Dark text for contrast */
-  padding: 20px; /* Add padding for spacing */
-  background-color: #ffffff; /* White background for a clean look */
-  border-radius: 12px; /* Rounded corners for a softer look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  text-align: center; /* Center align content */
+  font-family: 'Arial', sans-serif; /* Font for better readability */
+  color: #333; /* Dark text color */
+  padding: 20px; /* Padding around user info */
+  background-color: #ffffff; /* White background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .user-avatar {
-  border-radius: 50%; /* Make the avatar circular */
-  margin-bottom: 15px; /* Space below the avatar */
-  border: 3px solid #007bff; /* Blue border for a striking look */
+  border-radius: 50%; /* Circular avatar */
+  margin-bottom: 15px; /* Space below avatar */
+  border: 3px solid #007bff; /* Blue border for avatar */
 }
 
 .user-name {
-  font-size: 2.2em; /* Larger font size for prominence */
-  margin-top: 10px; /* Space above the name */
-  margin-bottom: 10px; /* Space below the name */
-  color: #007bff; /* Vibrant blue for the name */
+  font-size: 2.2em; /* Large font size for user name */
+  margin-top: 10px; /* Space above name */
+  margin-bottom: 10px; /* Space below name */
+  color: #007bff; /* Blue color for user name */
 }
 
 .user-role {
-  font-size: 1.6em; /* Font size for role */
-  color: #6c757d; /* Muted gray for role */
+  font-size: 1.6em; /* Font size for user role */
+  color: #6c757d; /* Muted gray color for role */
 }
 
 .user-details {
-  display: flex;
-  justify-content: center; /* Center-align the details horizontally */
-  gap: 20px; /* Increased space between items */
-  margin-top: 15px; /* Space above the details */
+  display: flex; /* Flexbox layout for user details */
+  justify-content: center; /* Center align details */
+  gap: 20px; /* Space between details */
+  margin-top: 15px; /* Space above details */
 }
 
 .activity-count {
-  font-size: 1.5em; /* Font size for both items */
-  color: #007bff; /* Blue color for links and counts */
+  font-size: 1.5em; /* Font size for activity count */
+  color: #007bff; /* Blue color for activity count */
 }
 
 .profile-link {
-  text-decoration: none;
-  font-weight: 500;
-  color: #007bff; /* Base color */
-  transition: color 0.3s ease, text-decoration 0.3s ease; /* Ensure proper transition syntax */
+  text-decoration: none; /* Remove underline */
+  font-weight: 500; /* Medium weight for links */
+  color: #007bff; /* Blue color for links */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transitions */
 }
 
 .profile-link:hover {
   color: #0056b3; /* Darker blue on hover */
   text-decoration: underline; /* Underline on hover */
 }
-.activity-count {
-  font-weight: 400; /* Regular weight for activity count */
-  color: black; /* Teal color for activity count */
 
+
+.row {
+  display: flex; /* Flexbox layout for rows */
+  flex-wrap: wrap; /* Ensure responsiveness */
 }
 
-.chart-container {
-  text-align: center;
-  margin-bottom: 30px;
+.col-md-8, .col-md-4 {
+  padding: 15px; /* Padding inside columns */
 }
 
-.chart-container img {
-  max-width: 100%;
-  height: auto;
+.activity-summary {
+  background-color: #ffffff; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px; /* Padding inside summary */
 }
+
+.week-card {
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Padding inside card */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.week-info {
+  margin-bottom: 15px; /* Space below week info */
+}
+
+.week-info h4 {
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.average-distance {
+  font-size: 1.2em; /* Larger font size */
+  font-weight: bold; /* Bold text */
+}
+
+.activity-list {
+  border-top: 1px solid #e0e0e0; /* Top border for list */
+  padding-top: 15px; /* Padding above list */
+}
+
+.activity-list ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.activity-list li {
+  padding: 10px 0; /* Padding inside list items */
+  border-bottom: 1px solid #e0e0e0; /* Border below list items */
+}
+
+.activity-feed {
+  background-color: #ffffff; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px; /* Padding inside feed */
+}
+
+.activity-feed h4 {
+  margin-bottom: 20px; /* Space below heading */
+}
+
