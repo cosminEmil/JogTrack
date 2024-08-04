@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
     before_action :logged_in_user, only: [:create, :edit, :update, :destroy]
-    before_action :correct_user, only: :destroy
+    before_action :correct_user, only: [:edit, :update, :destroy]
     
     def new
         @activity = Activity.new
@@ -38,11 +38,12 @@ class ActivitiesController < ApplicationController
 
     private
         def activity_params
-            params.require(:activity).permit(:distance, :hours, :minutes, :seconds, :title, :description, :run_at)
+            params.require(:activity).permit(:distance, :hours, :minutes, :seconds, :title, :description, :run_at, :location)
         end
         
         def correct_user
             @activity = Activity.find_by(id: params[:id])
-            redirect_to root_url if @activity.nil? && !current_user.admin?
+            redirect_to root_url unless @activity && (current_user.admin? || @activity.user == current_user)
         end
+        
 end

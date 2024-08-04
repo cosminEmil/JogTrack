@@ -84,12 +84,6 @@ class UsersController < ApplicationController
       current_user == @user
     end
 
-    def duration_in_minutes(activity)
-      (activity.hours.to_i * 60) +
-      (activity.minutes.to_i) +
-      (activity.seconds.to_i / 60.0)
-    end
-      
     def week_range(date)
       start_of_week = date.beginning_of_week
       end_of_week = date.end_of_week
